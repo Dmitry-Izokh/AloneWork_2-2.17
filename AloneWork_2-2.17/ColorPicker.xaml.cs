@@ -72,6 +72,19 @@ namespace AloneWork_2_2._17
 
         private static void OnColorRGBChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
+            Color newColor = (Color)e.NewValue;
+            ColorPicker colorpicker = (ColorPicker)sender;
+            colorpicker.Red = newColor.R;
+            colorpicker.Green = newColor.G;
+            colorpicker.Blue = newColor.B;
+
+            RoutedPropertyChangedEventArgs<Color> args = new RoutedPropertyChangedEventArgs<Color>(colorpicker.Color, newColor);
+            args.RoutedEvent = ColorChangedEvent;
+            colorpicker.RaiseEvent(args);            
+        }
+
+        private static void OnColorChanged( DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        {
             ColorPicker colorPicker = (ColorPicker)sender;
             Color color = colorPicker.Color;
             if (e.Property == RedProperty)
@@ -82,19 +95,6 @@ namespace AloneWork_2_2._17
                 color.B = (byte)e.NewValue;
 
             colorPicker.Color = color;
-        }
-
-        private static void OnColorChanged( DependencyObject sender, DependencyPropertyChangedEventArgs e)
-        {
-            Color newColor = (Color)e.NewValue;
-            ColorPicker colorpicker = (ColorPicker)sender;
-            colorpicker.Red = newColor.R;
-            colorpicker.Green = newColor.G;
-            colorpicker.Blue = newColor.B;
-
-            RoutedPropertyChangedEventArgs<Color> args = new RoutedPropertyChangedEventArgs<Color>(colorpicker.Color, newColor);
-            args.RoutedEvent = ColorChangedEvent;
-            colorpicker.RaiseEvent(args);
         }
 
         public event RoutedPropertyChangedEventHandler<Color>ColorCganged
