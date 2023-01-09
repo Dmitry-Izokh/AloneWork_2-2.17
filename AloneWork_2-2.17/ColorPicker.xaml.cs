@@ -40,9 +40,9 @@ namespace AloneWork_2_2._17
                 new FrameworkPropertyMetadata(Colors.Black, new PropertyChangedCallback(OnColorChanged)));
             RedProperty=DependencyProperty.Register("Red",typeof(byte), typeof(ColorPicker),
                 new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorChanged)));
-            GreenProperty = DependencyProperty.Register("Red", typeof(byte), typeof(ColorPicker),
+            GreenProperty = DependencyProperty.Register("Green", typeof(byte), typeof(ColorPicker),
                 new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorChanged)));
-            BlueProperty = DependencyProperty.Register("Red", typeof(byte), typeof(ColorPicker),
+            BlueProperty = DependencyProperty.Register("Blue", typeof(byte), typeof(ColorPicker),
                 new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorChanged)));
 
             ColorChangedEvent = EventManager.RegisterRoutedEvent("ColorChanged", RoutingStrategy.Bubble,

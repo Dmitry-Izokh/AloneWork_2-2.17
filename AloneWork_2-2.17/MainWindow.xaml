@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <local:ColorPicker x:Name="colorPicker" HorizontalAlignment="Left" Width="250" Height="60" ColorChanged="colorPicker_ColorChanged"  Margin="20"></local:ColorPicker>
+            <local:ColorPicker x:Name="colorPicker" HorizontalAlignment="Left" Width="250" Height="60" Margin="20"></local:ColorPicker>
             <TextBlock x:Name="txb" Text="Хотелось бы тут видеть наименование цвета" Margin="10" Padding="10" Background="White"></TextBlock>
              
         </StackPanel>
